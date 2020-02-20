@@ -1,0 +1,22 @@
+---
+title: "maps-2020-02-20"
+author: "Kyra Colbert"
+date: "20/02/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidycensus)
+library(tidyverse)
+```
+
+## R Markdown
+```{r}
+census_api_key("b1c182e111126cedbd05aec8edc6a7ca7efa8f12", install = TRUE)
+
+pop <- get_decennial(geography = "state",
+                     variables = "P001001",
+                     year = 2010)
+glimpse(pop)
+```
